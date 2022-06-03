@@ -1,6 +1,5 @@
 package com.med.msgviewer;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MessageFormatter {
@@ -11,19 +10,21 @@ public class MessageFormatter {
         //fields takes a string and returns an array of messages
         String [] fields = fileContent.split("(\\r\\n\\s|\\r\\s|\\n\\s)");
 
+        String formattedFileContent = "";
         for (String field : fields) {
             //System.out.println(field);
 
             Scanner scanner = new Scanner( field ).useDelimiter("\\n");
-            String TIME_STAMP = scanner.next(); // 4231
-            String NICK_NAME = scanner.next(); // "Java Programming"
-            String CONTENT = scanner.next();  // 1000.00
+            String TIME_STAMP = scanner.next().replace("Time:", "");
+            String NICK_NAME = scanner.next().replace("Name:", "");
+            String CONTENT = scanner.next().replace("Message:", "");
 
-            System.out.println("[" + TIME_STAMP + "]" + NICK_NAME + ":" + CONTENT);
+
+            formattedFileContent += "[" + TIME_STAMP + "]" + NICK_NAME + ":" + CONTENT + "\n";
         }
 
 
-        //System.out.print(Arrays.toString(fields));
-        return fileContent;
+        return formattedFileContent;
     }
+
 }
