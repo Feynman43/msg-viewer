@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -37,5 +38,6 @@ public class TextViewerController {
             fileContent += scanner.nextLine() + "\n";
         }
         FormattedTextArea.setText(fileContent);
+        FormattedTextArea.setEditable(false);
     }
 }
