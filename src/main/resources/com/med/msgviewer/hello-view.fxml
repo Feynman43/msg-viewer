@@ -8,14 +8,13 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.med.msgviewer.TextViewerController">
    <children>
       <MenuBar>
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Open New Message" />
+              <MenuItem mnemonicParsing="false" onAction="#onMenuOpen" text="Open New Message" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -26,7 +25,7 @@
         </menus>
       </MenuBar>
       <TextArea fx:id="FormattedTextArea" prefHeight="200.0" prefWidth="200.0" />
-      <Button mnemonicParsing="false" text="Button" />
+      <Button mnemonicParsing="false" onAction="#onMenuOpen" text="Button" />
       <Label fx:id="PathOfFile" text="Path of the file goes here" />
    </children>
 </VBox>
