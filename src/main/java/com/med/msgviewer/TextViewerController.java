@@ -3,7 +3,7 @@ package com.med.msgviewer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class TextEditorController {
+public class TextViewerController {
     @FXML
     private Label welcomeText;
 
