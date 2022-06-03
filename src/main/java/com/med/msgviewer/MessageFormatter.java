@@ -19,7 +19,6 @@ public class MessageFormatter {
             String NICK_NAME = scanner.next().replace("Name:", "");
             String CONTENT = scanner.next().replace("Message:", "");
 
-
             formattedFileContent += "[" + TIME_STAMP + "]" + NICK_NAME + ":" + CONTENT + "\n";
         }
 
