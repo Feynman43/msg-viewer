@@ -5,7 +5,8 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.TextFlow?>
 
@@ -25,8 +26,15 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TextArea fx:id="FormattedTextArea" prefHeight="200.0" prefWidth="200.0" />
-      <TextFlow fx:id="ColoredViewer" prefHeight="200.0" prefWidth="200.0" />
+      <ScrollPane prefHeight="323.0" prefWidth="600.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <TextFlow fx:id="ColoredViewer" maxWidth="600.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
       <Button mnemonicParsing="false" onAction="#onMenuOpen" text="Button" />
       <Label fx:id="PathOfFile" text="Path of the file goes here" />
    </children>
