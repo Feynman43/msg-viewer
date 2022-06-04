@@ -2,7 +2,6 @@ package com.med.msgviewer;
 
 import javafx.event.ActionEvent;
 //import javafx.fxml.FXML;
-import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -42,13 +41,21 @@ public class TextViewerController {
         }
 
 
-        FormattedTextArea.setText(MessageFormatter.formatter(fileContent));
-        FormattedTextArea.setEditable(false);
+/*        FormattedTextArea.setText(MessageFormatter.formatter(fileContent));
+        FormattedTextArea.setEditable(false);*/
 
-        Text text1=new Text(fileContent);
-        text1.setStyle("-fx-font-weight: bold");
-        text1.setFill(Color.RED);
+        for (String[] message : MessageFormatter.formatter(fileContent)){
+            Text Time = new Text("[" + message[0] + "]");
 
-        ColoredViewer.getChildren().add(text1);
+            Text Name = new Text(message[1] + ":");
+            Name.setStyle("-fx-font-weight: bold");
+            Name.setFill(Color.BLUE);
+
+            Text Message = new Text(message[2] + "\n");
+            Message.setStyle("-fx-font-weight: bold");
+            Message.setFill(Color.BLACK);
+
+            ColoredViewer.getChildren().addAll(Time, Name, Message);
+        }
     }
 }
